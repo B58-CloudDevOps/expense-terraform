@@ -1,3 +1,4 @@
+env = "dev"
 variable "components" {
   frontend = {
     name          = "frontend"
