@@ -17,6 +17,7 @@ module "backend" {
   name          = var.components["backend"]["name"]
   env           = var.env
   port_no       = var.components["backend"]["port_no"]
+  pwd           = var.pwd
 
 }
 
