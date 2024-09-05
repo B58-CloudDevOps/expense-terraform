@@ -28,5 +28,6 @@ module "mysql" {
   name          = var.components["mysql"]["name"]
   env           = var.env
   port_no       = var.components["mysql"]["port_no"]
+  pwd           = var.pwd
 
 }
