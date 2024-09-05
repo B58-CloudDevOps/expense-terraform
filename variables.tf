@@ -1,3 +1,5 @@
 variable "components" {}
 variable "env" {}
-variable "pwd" {}
+variable "pwd" {
+  default = "ExpenseApp@1"
+}
