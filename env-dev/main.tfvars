@@ -1,4 +1,5 @@
 env = "dev"
+pwd = "ExpenseApp@1"
 components = {
   frontend = {
     name          = "frontend"
