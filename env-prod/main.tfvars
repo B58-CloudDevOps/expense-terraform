@@ -1,5 +1,5 @@
 env = "prod"
-variable "components" {
+components = {
   frontend = {
     name          = "frontend"
     instance_type = "t3.medium"
