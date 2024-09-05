@@ -16,6 +16,7 @@ module "backend" {
   instance_type = var.components["backend"]["instance_type"]
   name          = var.components["backend"]["name"]
   env           = var.env
+  port_no       = var.components["mysql"]["port_no"]
 
 }
 
