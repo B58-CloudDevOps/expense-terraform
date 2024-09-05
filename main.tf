@@ -6,7 +6,7 @@ module "frontend" {
   name          = var.components["frontend"]["name"]
   env           = var.env
   port_no       = var.components["frontend"]["port_no"]
-  pwd           = var.pwd
+
 }
 
 module "backend" {
@@ -16,8 +16,7 @@ module "backend" {
   instance_type = var.components["backend"]["instance_type"]
   name          = var.components["backend"]["name"]
   env           = var.env
-  port_no       = var.components["backend"]["port_no"]
-  pwd           = var.pwd
+
 }
 
 module "mysql" {
@@ -26,5 +25,5 @@ module "mysql" {
   name          = var.components["mysql"]["name"]
   env           = var.env
   port_no       = var.components["mysql"]["port_no"]
-  pwd           = var.pwd
+
 }
