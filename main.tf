@@ -9,8 +9,8 @@ module "frontend" {
   ssh_pwd         = var.ssh_pwd
   vault_token     = var.vault_token
   prometheus_node = var.prometheus_node
-  zone_id         = var.zone_id
-  ami             = var.ami
+  zone_id         = data.aws_route53_zone.main.zone_id
+  ami             = data.aws_ami.main.image_id
 
 }
 
@@ -27,8 +27,8 @@ module "backend" {
   ssh_pwd         = var.ssh_pwd
   vault_token     = var.vault_token
   prometheus_node = var.prometheus_node
-  zone_id         = var.zone_id
-  ami             = var.ami
+  zone_id         = data.aws_route53_zone.main.zone_id
+  ami             = data.aws_ami.main.image_id
 }
 
 module "mysql" {
@@ -40,8 +40,8 @@ module "mysql" {
   ssh_pwd         = var.ssh_pwd
   vault_token     = var.vault_token
   prometheus_node = var.prometheus_node
-  zone_id         = var.zone_id
-  ami             = var.ami
+  zone_id         = data.aws_route53_zone.main.zone_id
+  ami             = data.aws_ami.main.image_id
 }
 
 # variable "vault_token" {}
