@@ -49,6 +49,9 @@ module "vpc" {
   source   = "git::https://github.com/B58-CloudDevOps/tf-module-vpc.git"
   for_each = var.vpc
 
-  env            = var.env
-  vpc_cidr_block = each.value["vpc_cidr_block"]
+  env             = var.env
+  vpc_cidr_block  = each.value["vpc_cidr_block"]
+  web_subnet_cidr = each.value["web_subnet_cidr"]
+  app_subnet_cidr = each.value["app_subnet_cidr"]
+  db_subnet_cidr  = each.value["db_subnet_cidr"]
 }
