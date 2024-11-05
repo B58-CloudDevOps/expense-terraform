@@ -34,7 +34,6 @@ vpc = {
 
 tags = {
   project_name = "expense"
-
   created_with = "terraform"
   bu           = "ecomm"
 }
