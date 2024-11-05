@@ -1,7 +1,12 @@
-variable "components" {}
-variable "env" {}
-variable "ssh_pwd" {}
-variable "vault_token" {}
-variable "prometheus_node" {}
+# variable "components" {}
+# variable "env" {}
+
+# variable "prometheus_node" {}
 # variable "zone_id" {}
 # variable "ami" {}
+
+
+variable "ssh_pwd" {}
+variable "vault_token" {}
+variable "env" {}
+variable "vpc" {}

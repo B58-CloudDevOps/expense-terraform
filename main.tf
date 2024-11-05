@@ -46,8 +46,9 @@
 # Creates VPC
 
 module "vpc" {
-  source = "git::https://github.com/B58-CloudDevOps/tf-module-vpc.git"
+  source   = "git::https://github.com/B58-CloudDevOps/tf-module-vpc.git"
+  for_each = var.vpc
 
   env            = var.env
-  vpc_cidr_block = var.vpc_cidr_block
+  vpc_cidr_block = each.vaule["vpc_cidr_block"]
 }
