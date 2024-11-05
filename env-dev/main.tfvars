@@ -21,6 +21,7 @@
 
 # prometheus_node = ["172.31.85.80/32"]
 
+env = "dev"
 
 vpc = {
   main = {
@@ -33,7 +34,7 @@ vpc = {
 
 tags = {
   project_name = "expense"
-  env          = "dev"
+
   created_with = "terraform"
   bu           = "ecomm"
 }
