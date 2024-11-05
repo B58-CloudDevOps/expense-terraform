@@ -48,5 +48,6 @@
 module "vpc" {
   source = "git::https://github.com/B58-CloudDevOps/tf-module-vpc.git"
 
-  env = var.env
+  env            = var.env
+  vpc_cidr_block = var.vpc_cidr_block
 }
