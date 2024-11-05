@@ -8,6 +8,6 @@
 
 variable "ssh_pwd" {}
 variable "vault_token" {}
-# variable "env" {}
+variable "env" {}
 variable "vpc" {}
 variable "tags" {}
