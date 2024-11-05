@@ -21,7 +21,7 @@
 
 # prometheus_node = ["172.31.85.80/32"]
 
-env = "dev"
+
 vpc = {
   main = {
     vpc_cidr_block  = "10.0.0.0/16"
@@ -29,6 +29,13 @@ vpc = {
     app_subnet_cidr = ["10.0.2.0/24", "10.0.3.0/24"]
     db_subnet_cidr  = ["10.0.4.0/24", "10.0.5.0/24"]
   }
+}
+
+tags = {
+  project_name = "expense"
+  env          = "dev"
+  created_with = "terraform"
+  bu           = "ecomm"
 }
 
   
