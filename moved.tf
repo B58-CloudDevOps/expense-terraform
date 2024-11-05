@@ -1,4 +1,4 @@
-moved {
-  from = module.vpc
-  to   = module.vpcs
-}
+# moved {
+#   from = module.vpc
+#   to   = module.vpcs
+# }

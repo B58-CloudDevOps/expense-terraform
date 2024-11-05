@@ -45,7 +45,7 @@
 
 # Creates VPC
 
-module "vpcs" {
+module "vpc" {
   source   = "git::https://github.com/B58-CloudDevOps/tf-module-vpc.git"
   for_each = var.vpc
 
