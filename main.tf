@@ -57,4 +57,8 @@ module "vpc" {
   azs             = each.value["azs"]
   env             = var.env
   tags            = var.tags
+
+  default_vpc_id   = each.value["default_vpc_id"]
+  default_vpc_cidr = each.value["default_vpc_cidr"]
+  default_vpc_rt   = each.value["default_vpc_rt"]
 }
