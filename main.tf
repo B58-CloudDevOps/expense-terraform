@@ -54,6 +54,7 @@ module "vpc" {
   web_subnet_cidr = each.value["web_subnet_cidr"]
   app_subnet_cidr = each.value["app_subnet_cidr"]
   db_subnet_cidr  = each.value["db_subnet_cidr"]
+  azs             = each.value["azs"]
   env             = var.env
   tags            = var.tags
 }
