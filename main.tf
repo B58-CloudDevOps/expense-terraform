@@ -71,7 +71,8 @@ module "eks" {
 
   env         = var.env
   tags        = var.tags
-  eks_version = "1.31" # each.value["eks_verison"]
+  eks_version = each.value["eks_verison"] # "1.31"
+  node_groups = each.value["node_groups"]
 
   subnet_ids = module.vpc["main"].eks_subnet_ids
 

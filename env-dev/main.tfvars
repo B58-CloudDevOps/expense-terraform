@@ -46,5 +46,11 @@ tags = {
 eks = {
   main = {
     eks_version = "1.31"
+    node_groups = {
+      ng1 = {
+        instance_type = ["t3.medium"]
+        capacity_type = "SPOT"
+      }
+    }
   }
 }
