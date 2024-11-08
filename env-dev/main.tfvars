@@ -50,6 +50,8 @@ eks = {
       ng1 = {
         instance_type = ["t3.medium"]
         capacity_type = "SPOT"
+        node_min_size = 1
+        node_max_size = 3
       }
     }
   }
