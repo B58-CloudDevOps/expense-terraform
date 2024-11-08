@@ -61,4 +61,18 @@ module "vpc" {
   default_vpc_id   = each.value["default_vpc_id"]
   default_vpc_cidr = each.value["default_vpc_cidr"]
   default_vpc_rt   = each.value["default_vpc_rt"]
+
+}
+
+# Creates EKS
+module "eks" {
+  source   = "git::https://github.com/B58-CloudDevOps/tf-module-eks.git"
+  for_each = var.eks
+
+  env             = var.env
+  tags            = var.tags
+  eks_version     = var.eks_version
+
+  subnet_ids = module.vpc.["main"].eks_subnet_ids
+
 }

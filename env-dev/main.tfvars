@@ -43,4 +43,8 @@ tags = {
   bu           = "ecomm"
 }
 
-  
+eks = {
+  main = {
+    eks_version = "1.31"
+  }
+}
