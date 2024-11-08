@@ -51,8 +51,8 @@ module "vpc" {
 
 
   vpc_cidr_block  = each.value["vpc_cidr_block"]
-  web_subnet_cidr = each.value["web_subnet_cidr"]
-  app_subnet_cidr = each.value["app_subnet_cidr"]
+  lb_subnet_cidr  = each.value["lb_subnet_cidr"]
+  eks_subnet_cidr = each.value["eks_subnet_cidr"]
   db_subnet_cidr  = each.value["db_subnet_cidr"]
   azs             = each.value["azs"]
   env             = var.env
