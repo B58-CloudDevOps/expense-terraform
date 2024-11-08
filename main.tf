@@ -69,11 +69,11 @@ module "eks" {
   source   = "git::https://github.com/B58-CloudDevOps/tf-module-eks.git"
   for_each = var.eks
 
-  env         = var.env
-  tags        = var.tags
-  eks_version = each.value["eks_verison"] # "1.31"
+  eks_version = "1.31" # each.value["eks_verison"] 
   node_groups = each.value["node_groups"]
+  subnet_ids  = module.vpc["main"].eks_subnet_ids
 
-  subnet_ids = module.vpc["main"].eks_subnet_ids
+  env  = var.env
+  tags = var.tags
 
 }
