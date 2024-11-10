@@ -77,5 +77,4 @@ module "eks" {
 
   env  = var.env
   tags = var.tags
-
 }
