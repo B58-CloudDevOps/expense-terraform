@@ -66,6 +66,8 @@ module "vpc" {
 
 # Creates EKS
 module "eks" {
+  depends_on = [module.vpc]
+
   source   = "git::https://github.com/B58-CloudDevOps/tf-module-eks.git"
   for_each = var.eks
 
