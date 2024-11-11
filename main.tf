@@ -68,12 +68,12 @@ module "rds" {
   source     = "git::https://github.com/B58-CloudDevOps/tf-module-rds.git"
   for_each   = var.rds
 
-  engine         = ""
-  engine_verison = ""
-  env            = ""
-  family         = ""
-  instance_class = ""
-  subnet_ids     = ""
+  engine         = each.value["engine"]
+  engine_verison = each.value["engine_version"]
+  env            = var.env
+  family         = each.value["family"]
+  instance_class = each.value["instance_class"]
+  subnet_ids     = module.vpc["main"].db_subnet_ids
 
 
 
