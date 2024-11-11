@@ -74,9 +74,6 @@ module "rds" {
   family         = each.value["family"]
   instance_class = each.value["instance_class"]
   subnet_ids     = module.vpc["main"].db_subnet_ids
-
-
-
 }
 
 # Creates EKS
