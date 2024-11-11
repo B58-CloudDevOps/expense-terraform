@@ -65,8 +65,18 @@ module "vpc" {
 # Creates RDS
 module "rds" {
   depends_on = [module.vpc]
+  source     = "git::https://github.com/B58-CloudDevOps/tf-module-rds.git"
+  for_each   = var.rds
 
-  source = "git::https://github.com/B58-CloudDevOps/tf-module-rds.git"
+  engine         = ""
+  engine_verison = ""
+  env            = ""
+  family         = ""
+  instance_class = ""
+  subnet_ids     = ""
+
+
+
 }
 
 # Creates EKS

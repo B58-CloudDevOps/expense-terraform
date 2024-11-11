@@ -13,3 +13,5 @@ variable "vpc" {}
 variable "tags" {}
 
 variable "eks" {}
+
+variable "rds" {}
