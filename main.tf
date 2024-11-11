@@ -77,7 +77,7 @@ module "rds" {
   eks_subnet_cidr = module.vpc["main"].eks_subnet_cidr
   vpc_id          = module.vpc["main"].vpc_id
 
-  engine_verison = each.value["engine_version"]
+  engine_version = each.value["engine_version"]
 
 }
 
