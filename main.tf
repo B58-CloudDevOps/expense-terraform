@@ -49,7 +49,6 @@ module "vpc" {
   source   = "git::https://github.com/B58-CloudDevOps/tf-module-vpc.git"
   for_each = var.vpc
 
-
   vpc_cidr_block  = each.value["vpc_cidr_block"]
   lb_subnet_cidr  = each.value["lb_subnet_cidr"]
   eks_subnet_cidr = each.value["eks_subnet_cidr"]
@@ -61,12 +60,18 @@ module "vpc" {
   default_vpc_id   = each.value["default_vpc_id"]
   default_vpc_cidr = each.value["default_vpc_cidr"]
   default_vpc_rt   = each.value["default_vpc_rt"]
+}
 
+# Creates RDS
+module "rds" {
+  depends_on = [module.vpc]
+
+  source = "git::https://github.com/B58-CloudDevOps/tf-module-eks.git"
 }
 
 # Creates EKS
 module "eks" {
-  depends_on = [module.vpc]
+  depends_on = [module.vpc, module.rds]
 
   source   = "git::https://github.com/B58-CloudDevOps/tf-module-eks.git"
   for_each = var.eks
@@ -78,3 +83,4 @@ module "eks" {
   env  = var.env
   tags = var.tags
 }
+
