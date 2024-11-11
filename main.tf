@@ -66,7 +66,7 @@ module "vpc" {
 module "rds" {
   depends_on = [module.vpc]
 
-  source = "git::https://github.com/B58-CloudDevOps/tf-module-eks.git"
+  source = "git::https://github.com/B58-CloudDevOps/tf-module-rds.git"
 }
 
 # Creates EKS
