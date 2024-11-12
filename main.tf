@@ -70,29 +70,31 @@ module "rds" {
 
   engine = each.value["engine"]
 
-  env             = var.env
-  family          = each.value["family"]
-  instance_class  = each.value["instance_class"]
-  db_subnet_ids   = module.vpc["main"].db_subnet_ids
+  env            = var.env
+  family         = each.value["family"]
+  instance_class = each.value["instance_class"]
+
   eks_subnet_cidr = module.vpc["main"].eks_subnet_cidr
   vpc_id          = module.vpc["main"].vpc_id
 
   engine_version = each.value["engine_version"]
 
+  subnet_ids = module.vpc["main"].rds_subnet_ids
+
 }
 
-# Creates EKS
-module "eks" {
-  depends_on = [module.vpc, module.rds]
+# # Creates EKS
+# module "eks" {
+#   depends_on = [module.vpc, module.rds]
 
-  source   = "git::https://github.com/B58-CloudDevOps/tf-module-eks.git"
-  for_each = var.eks
+#   source   = "git::https://github.com/B58-CloudDevOps/tf-module-eks.git"
+#   for_each = var.eks
 
-  eks_version = "1.31" # each.value["eks_verison"] 
-  node_groups = each.value["node_groups"]
-  subnet_ids  = module.vpc["main"].eks_subnet_ids
+#   eks_version = "1.31" # each.value["eks_verison"] 
+#   node_groups = each.value["node_groups"]
+#   subnet_ids  = module.vpc["main"].eks_subnet_ids
 
-  env  = var.env
-  tags = var.tags
-}
+#   env  = var.env
+#   tags = var.tags
+# }
 
