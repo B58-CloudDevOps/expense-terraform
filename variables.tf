@@ -15,4 +15,4 @@ variable "tags" {}
 variable "eks" {}
 
 variable "rds" {}
-variable "db_subnet_ids" {}
+variable "subnet_ids" {}
