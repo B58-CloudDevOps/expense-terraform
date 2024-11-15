@@ -18,3 +18,5 @@ All the state information would be supplied in the env-dev or prod and this stra
     a) Dynamically fetches the password for argo 
     b) Using that password, authenticates to argocd 
     c) Does the creaation fo argocd jobs ( Continuous Reconissance : whenever there is a change, deployment will happen automatically.)
+
+    
